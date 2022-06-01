@@ -1,3 +1,27 @@
+<h1>TESTES DE DESENVOLVIMENTO</h1>
+
+## **Para rodar o código utilize os comandos em terminal na pasta raíz do projeto:**
+###  
+1. ```
+    mkdir build
+   ```
+2. ```
+    cd build
+   ```
+3. ```
+    cmake ..
+   ```
+4. ```
+    cmake --build .
+   ```
+5. ```
+    words_complete_correct ../data/cities.txt
+   ```
+
+
+
+</br>
+</br>
 # Autocomplete e Autocorrect
 
 ### Sumário
