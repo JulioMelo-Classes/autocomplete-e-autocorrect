@@ -17,6 +17,7 @@ project(Autocomplete)
 #sem ncurses
 add_executable(words_complete_correct
                src/main.cpp
+               src/Dados.cpp
               )
               
 target_include_directories(words_complete_correct PUBLIC
