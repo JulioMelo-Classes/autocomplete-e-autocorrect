@@ -1,8 +1,7 @@
 # Autocomplete e Autocorrect
-# Teste
+
 ### Sumário
 - [Autocomplete e Autocorrect](#autocomplete-e-autocorrect)
-- [Teste](#teste)
     - [Sumário](#sumário)
 - [1-Introdução](#1-introdução)
 - [2-Autocomplete vs Autocorrect](#2-autocomplete-vs-autocorrect)
