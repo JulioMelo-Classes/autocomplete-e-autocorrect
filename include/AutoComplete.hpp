@@ -2,7 +2,7 @@
 #define AutoComplete_hpp
 
 class AutoComplete{
-
+    
 };
 
 #endif
