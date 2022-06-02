@@ -4,7 +4,7 @@ using namespace std;
 Dados::Dados(string cidades, string ingles, string portugues) {
     string linha;
     ifstream arquivo;
-    
+
     arquivo.open(cidades.c_str());
     while (!arquivo.eof()) {
         getline(arquivo, linha);
@@ -29,6 +29,9 @@ Dados::Dados(string cidades, string ingles, string portugues) {
 
 vector<string> Dados::getDadosCidades() { return mDadosCidades; }
 
+
+//  ******  Testes  *******  //////////////
+//  ******  Testes  *******  //////////////
 void Dados::ImprimirTeste() {
     int i = 0;
     while (i < 2) {
