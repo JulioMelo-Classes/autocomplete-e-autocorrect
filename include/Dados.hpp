@@ -6,6 +6,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <algorithm>
 
 class Dados {
    private:
@@ -27,6 +28,10 @@ class Dados {
      */
     std::vector<std::pair<unsigned long int, std::string>> getDados();
 
+    /**
+     * @brief Função para ordenar alfabeticamente o vetor de dados 
+     */
+    void ordenarAlfabeticamente();
 
     //  ******  Testes  *******  //////////////
     //  ******  Testes  *******  //////////////

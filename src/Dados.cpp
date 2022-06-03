@@ -18,14 +18,17 @@ Dados::Dados(string dados) {
 
 vector<pair<unsigned long int, string>> Dados::getDados() { return mDados; }
 
-
+void Dados::ordenarAlfabeticamente() {
+    auto lambdaAlpha = [] (const auto &x, const auto &y) { return x.second < y.second; };
+    sort(mDados.begin(), mDados.end(), lambdaAlpha);
+}
 
 
 //  ******  Testes  *******  //////////////
 //  ******  Testes  *******  //////////////
 void Dados::imprimirTeste() {
     int i = 0;
-    while (i < 2) {
+    while (i < 5) {
         cout << mDados[i].first << endl;
         cout << mDados[i].second << endl;
         i++;

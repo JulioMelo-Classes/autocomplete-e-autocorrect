@@ -350,7 +350,6 @@
 24109100 wish
 24065200 fire
 24028000 cried
-240009002 
 23973500 women
 23902500 speak
 23873400 number
@@ -570,7 +569,6 @@
 14159700 pay
 14158800 red
 14151700 an
-141402004 
 14124600 hath
 14067900 note
 14066700 although
@@ -7021,11 +7019,9 @@
 797859 thickly
 797621 correspondent
 797542 sounding
-79738464 
 796988 sombre
 796830 brushed
 795723 reasonably
-79564412 th
 795644 duel
 795644 reluctantly
 795564 implies
@@ -7386,7 +7382,6 @@
 732669 injurious
 732432 formally
 732432 sports
-732274 ab
 732274 scales
 732195 wyoming
 732115 discontinue
@@ -7430,7 +7425,6 @@
 725470 sketches
 725391 groves
 725312 col
-72507411 th
 725074 comprehension
 724758 cling
 724758 duck
@@ -7888,7 +7882,6 @@
 651974 deserts
 651736 shelves
 651420 denial
-6504701 b
 650391 traits
 650312 denounced
 650312 eric
@@ -8505,7 +8498,6 @@
 560677 arched
 560597 investment
 560439 tabernacle
-56012386 
 560123 client
 560123 ghostly
 560044 furs
@@ -8758,7 +8750,6 @@
 527607 morally
 527370 qualifications
 527132 gasp
-527053101 
 526895 gliding
 526341 tested
 526183 racing
@@ -9250,7 +9241,6 @@
 464475 intoxicated
 464316 commissioned
 464316 ratio
-464079121 
 464000 comb
 464000 masterpiece
 464000 wholesale
@@ -9684,7 +9674,6 @@
 419222 brace
 419063 converts
 419063 detestable
-418905143 
 418905 abandoning
 418905 somerset
 418905 weakly
