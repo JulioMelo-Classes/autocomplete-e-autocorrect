@@ -9,9 +9,7 @@
 
 class Dados {
    private:
-    std::vector<std::string> mDadosCidades;                               // Vetor contendo dados de cidades
-    std::vector<std::pair<unsigned long int, std::string>> mDadosIngles;  // Vetor contendo dados de palavras em inglês
-    std::vector<std::string> mDadosPortugues;                             // Vetor contendo dados de palavras em português
+    std::vector<std::pair<unsigned long int, std::string>> mDados;  // Vetor contendo dados de peso e palavras
 
 
    public:
@@ -22,12 +20,12 @@ class Dados {
      * @param portugues Arquivo contendo dados de palavras em inglês
      * @param ingles Arquivo contendo dados de palavras em português
      */
-    Dados(std::string cidades, std::string ingles, std::string portugues);
+    Dados(std::string dados);
 
     /**
      * @brief Getter para o vetor contendo os dados das cidades.
      */
-    std::vector<std::string> getDadosCidades();
+    std::vector<std::pair<unsigned long int, std::string>> getDados();
 
 
     //  ******  Testes  *******  //////////////
@@ -36,7 +34,7 @@ class Dados {
     void testeAutoComplete(std::string entrada) {
         std::vector<std::string> palavrasAutoComplete;
         int count = 0;
-        for (auto i : mDadosIngles) {
+        for (auto i : mDados) {
             for (int j = 0; j < i.second.size(); j++) {
                 if (entrada[j] == i.second[j]) {
                     count++;

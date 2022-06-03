@@ -1,3 +1,3 @@
 #!/bin/bash
-./words_complete_correct ../data/cities.txt ../data/wikitionary.txt ../data/ptbrcorpus.txt
+./words_complete_correct ../data/wikitionary.txt
 

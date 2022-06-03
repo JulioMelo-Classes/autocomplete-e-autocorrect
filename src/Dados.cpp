@@ -1,36 +1,22 @@
 #include "Dados.hpp"
 using namespace std;
 
-Dados::Dados(string cidades, string ingles, string portugues) {
+Dados::Dados(string dados) {
     string linha;
     ifstream arquivo;
+    
 
-    arquivo.open(cidades.c_str());
-    while (!arquivo.eof()) {
-        getline(arquivo, linha);
-        mDadosCidades.push_back(string(linha));
-    }
-    arquivo.close();
-
-    arquivo.open(ingles.c_str());
+    arquivo.open(dados.c_str());
     while (!arquivo.eof()) {
         getline(arquivo, linha, ' ');
         unsigned long int peso = stoul(linha);
         getline(arquivo, linha);
-        mDadosIngles.push_back(make_pair(peso, linha));
-
-    }
-    arquivo.close();
-
-    arquivo.open(portugues.c_str());
-    while (!arquivo.eof()) {
-        getline(arquivo, linha);
-        mDadosPortugues.push_back(string(linha));
+        mDados.push_back(make_pair(peso, linha));
     }
     arquivo.close();
 }
 
-vector<string> Dados::getDadosCidades() { return mDadosCidades; }
+vector<pair<unsigned long int, string>> Dados::getDados() { return mDados; }
 
 
 
@@ -40,10 +26,8 @@ vector<string> Dados::getDadosCidades() { return mDadosCidades; }
 void Dados::imprimirTeste() {
     int i = 0;
     while (i < 2) {
-        cout << mDadosCidades[i] << endl;
-        cout << mDadosIngles[i].first << endl;
-        cout << mDadosIngles[i].second << endl;
-        cout << mDadosPortugues[i] << endl;
+        cout << mDados[i].first << endl;
+        cout << mDados[i].second << endl;
         i++;
     }
 }

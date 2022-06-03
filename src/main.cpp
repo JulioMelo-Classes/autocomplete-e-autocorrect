@@ -5,7 +5,7 @@ using namespace std;
 int main(int argc, char *argv[]) {
     cout << "--------------------------------------------------------------------" << endl;
 
-    Dados dados(argv[1], argv[2], argv[3]);
+    Dados dados(argv[1]);
     dados.imprimirTeste();
 
 
