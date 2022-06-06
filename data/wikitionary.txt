@@ -211,7 +211,6 @@
 41931500 going
 41886200 seen
 41646300 better
-41567300 p
 41535500 having
 41349900 home
 41310100 knew
@@ -667,7 +666,6 @@
 11738600 rich
 11725100 thoughts
 11695500 months
-11658600 u
 11656800 wont
 11646700 afraid
 11640200 paris
@@ -796,7 +794,6 @@
 9865130 somewhat
 9849780 sudden
 9823280 value
-9799150 c
 9762830 direction
 9756740 chair
 9735300 due
@@ -839,7 +836,6 @@
 9339810 allowed
 9338470 girls
 9323520 considerable
-9299070 c
 9280080 broke
 9244640 honour
 9229210 seven
@@ -947,7 +943,6 @@
 8288320 possession
 8283970 pleasant
 8283090 perfectly
-8276130 o
 8272570 memory
 8264420 usually
 8262370 grave
@@ -970,7 +965,6 @@
 8139660 touch
 8139270 equal
 8123210 fortune
-8120750 v
 8110940 shore
 8105640 domain
 8075660 named
@@ -1227,7 +1221,6 @@
 6561590 presented
 6558110 aid
 6556440 fingers
-6555650 q
 6555420 remembered
 6539670 choose
 6528440 agreed
@@ -1474,7 +1467,6 @@
 5555100 station
 5545290 beat
 5543160 distributed
-5540550 e
 5540070 listen
 5532790 italy
 5532400 fool
@@ -2255,7 +2247,6 @@
 3615560 reputation
 3612320 appeal
 3612080 shes
-3608830 w
 3608040 strongly
 3600690 margaret
 3599660 lack
@@ -2302,7 +2293,6 @@
 3515240 ignorance
 3512240 reduced
 3510020 occasionally
-3509470 y
 3509070 weakness
 3508910 furnished
 3505830 china
@@ -2787,7 +2777,6 @@
 2776560 strain
 2775060 drank
 2773790 confined
-2772760 o
 2771340 exhausted
 2769360 poets
 2769050 sounded
@@ -3145,7 +3134,6 @@
 2374900 prize
 2373320 instances
 2373080 greeks
-2373000 d
 2371900 theyre
 2371100 theatre
 2370470 purchase
@@ -3682,7 +3670,6 @@
 1960510 ohio
 1959320 ashes
 1956390 ghost
-1954970 b
 1954730 promises
 1954100 bushes
 1952590 effective
@@ -4547,7 +4534,6 @@
 1500780 survive
 1500540 literally
 1499430 consolation
-1499430 m
 1499430 phenomena
 1499350 pot
 1498400 ellen
@@ -4677,7 +4663,6 @@
 1445950 delicacy
 1445640 projected
 1445400 akin
-1445240 f
 1444840 betray
 1444690 traced
 1443260 resentment
@@ -4839,7 +4824,6 @@
 1380290 monstrous
 1379970 tongues
 1379580 barely
-13785503 d
 1378470 mansion
 1378390 facility
 1377910 praised
@@ -4895,7 +4879,6 @@
 1364700 bits
 1364230 consult
 1364230 moves
-1364230 r
 1363990 warn
 1363830 taylor
 1361620 vile
@@ -5229,7 +5212,6 @@
 1248170 navy
 1247850 fortress
 1247690 hurrying
-1247460 x
 1247140 blessings
 1246660 attempting
 1246590 insects
@@ -5266,7 +5248,6 @@
 1235670 morals
 1235510 damned
 1234560 vexed
-12344802 d
 1234090 pouring
 1233370 bullet
 1233290 excessive
@@ -5587,7 +5568,6 @@
 1139390 plane
 1139230 reaction
 1138520 regiments
-1138360 g
 1138040 sums
 1137960 partially
 1137570 prejudices
@@ -5833,7 +5813,6 @@
 1065810 varying
 1065570 barbarous
 1065570 celestial
-1065420 t
 1065340 patriotism
 1064940 modify
 1064700 earnestness
@@ -5882,7 +5861,6 @@
 1054100 restoration
 1053870 serpent
 1053470 hedge
-1053470 k
 1053230 jurisdiction
 1053070 captains
 1053070 settlers
@@ -6162,7 +6140,6 @@
 983854 judicial
 983617 consistent
 983538 ridicule
-983459 as
 983459 reins
 983301 barrel
 983222 distrust
@@ -7294,7 +7271,6 @@
 748967 harvey
 748808 icy
 748808 inconvenience
-748334 v
 748255 pots
 748096 dimensions
 747938 abused
@@ -7757,7 +7733,6 @@
 670486 trench
 669932 fore
 668983 accession
-668825 h
 668587 dey
 668508 connexion
 668429 cairo
@@ -8590,7 +8565,6 @@
 547148 dose
 547148 evans
 547069 hypocrisy
-546990 l
 546832 salmon
 546832 snap
 546594 alma
@@ -9454,7 +9428,6 @@
 442402 affirmative
 442244 ills
 442165 applications
-442165 t
 442006 dye
 442006 gloucester
 441769 nominal
@@ -9696,7 +9669,7 @@
 416927 ram
 416927 rowing
 416848 negligence
-416848 self 
+416848 self
 416769 sulphur
 416690 discrimination
 416295 cooling
@@ -9952,7 +9925,6 @@
 395329 terminate
 395250 wilful
 395171 conveniently
-395092 n
 395092 cleanliness
 395092 collective
 395013 angela
