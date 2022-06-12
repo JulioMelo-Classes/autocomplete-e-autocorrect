@@ -1,8 +1,7 @@
 #include "AutoComplete.hpp"
-
 using namespace std;
 
-vector<string> AutoComplete::testeAutoComplete(string entrada, vector<pair<unsigned long int, string>> mDados) {
+vector<string> AutoComplete::testeAutoComplete(string entrada, vector<pair<long int, string>> mDados) {
     int count = 0;
     for (auto i : mDados) {
         for (int j = 0; j < (int)i.second.size(); j++) {

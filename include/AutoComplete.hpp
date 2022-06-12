@@ -9,11 +9,11 @@
 #include <vector>
 
 class AutoComplete {
-   private:
-    std::vector<std::string> palavrasAutoComplete;
+    private:
+        std::vector<std::string> palavrasAutoComplete;
 
-   public:
-    std::vector<std::string> testeAutoComplete(std::string entrada, std::vector<std::pair<unsigned long int, std::string>> mDados);
+    public:
+        std::vector<std::string> testeAutoComplete(std::string entrada, std::vector<std::pair<long int, std::string>> mDados);
 };
 
 #endif

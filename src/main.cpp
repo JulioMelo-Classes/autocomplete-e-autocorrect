@@ -10,6 +10,7 @@ int main(int argc, char *argv[]) {
     string sentenca;
     vector<string> a;
     dados.ordenarAlfabeticamente();
+    //dados.escreveVetorOrdenado();
 
     while (true) {
         cout << "--------------------------------------------------------------------" << endl;
@@ -19,6 +20,7 @@ int main(int argc, char *argv[]) {
         for_each(sentenca.begin(), sentenca.end(), [](char & c) {c = ::tolower(c);});
 
         cout << ">>> " << sentenca <<  endl;
+
         if (sentenca == " " || sentenca == "") {
             cout << "Entrada inválida, digite novamente." << endl;
             continue;
@@ -32,7 +34,7 @@ int main(int argc, char *argv[]) {
         
 
         // cout << dados.recursive_binary_search(a, 0, a.size(), sentenca) << endl;
-        // dados.findLowerAndUpperBound(sentenca);
+        dados.findLowerBound(sentenca);
     }
 
     cout << "\n FIM DO CÓDIGO \n";

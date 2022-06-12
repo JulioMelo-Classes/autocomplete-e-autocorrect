@@ -1,25 +1,55 @@
 #include "Dados.hpp"
 using namespace std;
 
-#include <iterator>
-#include <sstream>
-
 Dados::Dados(string dados) {
     string linha;
     ifstream arquivo;
+    int c_linha1 = 0, c_linha2 = 0;
 
     arquivo.open(dados.c_str());
+
     while (!arquivo.eof()) {
-        getline(arquivo, linha, ' ');
-        unsigned long int peso = stoul(linha);
-        getline(arquivo, linha, '\n');
-        linha.erase(linha.size() - 1);
-        mDados.push_back(make_pair(peso, linha));
+        c_linha1++;
+
+        //Verifica se o arquivo existe/está aberto.
+        if (arquivo.is_open() == false){
+            cout << "Erro! Arquivo inexistente." << endl;
+            exit(-1);
+        }
+        
+        //Verifica se a palavra tem um peso correspondente ou se o arquivo está vazio.
+        try{
+            getline(arquivo, linha, ' ');
+            long int peso = stol(linha);
+            getline(arquivo, linha, '\n');
+            linha.erase(linha.size() - 1);
+            mDados.push_back(make_pair(peso, linha));
+        }catch(...){
+            cout << "Erro! Peso inexistente na linha " + to_string(c_linha1) + " ou arquivo \"" + dados + "\" vazio." << endl;
+            exit(-1);
+        } 
     }
+
     arquivo.close();
+    
+    for (auto item : mDados){
+        c_linha2++;
+
+        //Verifica se o peso é negativo.
+        if (item.first > pow(100,5)){
+            cout << "Erro! Peso negativo relacionado a palavra \"" + item.second +  "\"." << endl;
+            exit(-1);
+        }
+
+        //Verifica se a palavra está vazia.
+        if (item.second.empty()){
+            cout << "Erro! Palavra vazia na linha " + to_string(c_linha2) + "." << endl;
+            exit(-1);
+        }
+    }
 }
 
-vector<pair<unsigned long int, string>> Dados::getDados() {
+vector<pair<long int, string>> Dados::getDados() {
     return mDados;
 }
 
@@ -28,25 +58,13 @@ void Dados::ordenarAlfabeticamente() {
     sort(mDados.begin(), mDados.end(), lambdaAlpha);
 }
 
-void Dados::findLowerAndUpperBound(string &entrada) {
-    int count = 0, c = 0;
-    auto prc_info = lower_bound(mDados.begin(), mDados.end(), entrada,
-                                [](pair<int, string> const &x, string d) { return x.second == d; });
-
-    for (auto i : mDados) {
-        c++;
-        for (int j = 0; j < (int)entrada.size(); j++) {
-            if (entrada[j] == i.second[j]) {
-                count++;
-                if (count == entrada.size()) {
-                    cout << i.second << endl;
-                    cout << c << endl;
-                    break;
-                }
-            }
-        }
-        count = 0;
+void Dados::escreveVetorOrdenado(){
+    fstream arquivo;
+    arquivo.open("../data/a.txt", ios::app);
+    for (auto i : mDados){
+        arquivo << i.first << " " << i.second << '\n';
     }
+    arquivo.close();
 }
 
 string Dados::recursive_binary_search(vector<string> vector, int begin, int end, string item) {
@@ -74,7 +92,6 @@ string Dados::recursive_binary_search(vector<string> vector, int begin, int end,
     }
 }
 
-//  ******  Testes  *******  //////////////
 void Dados::imprimirTeste() {
     int i = 0;
     while (i < 5) {
@@ -85,4 +102,39 @@ void Dados::imprimirTeste() {
              << " tamanho palavra: " << mDados[i].second.size() << endl;
         i++;
     }
+}
+
+void Dados::findLowerBound(string &entrada){
+    vector<string> palavras;
+    pair<long int, string> par;
+    int c_1 = 0;
+    
+    for (auto i : mDados) {
+        palavras.push_back(i.second);
+        //cout << i.first << " " << i.second << endl;
+        for (int j = 0; j < (int)entrada.size(); j++) {
+            if (entrada[j] == i.second[j]) {
+                c_1++;
+                if (c_1 == entrada.size()) {
+                    par.first = i.first;
+                    par.second = i.second;
+                    break;
+                }
+            }
+        }
+        c_1 = 0;
+    }
+
+
+
+    //cout << par.first << " " << par.second << endl;
+    auto low = lower_bound(mDados.begin(), mDados.end(), par,
+                                [](const auto &x, const auto &y) { return x.second < y.second; });
+    
+    //cout << low - mDados.begin() << endl;
+
+    auto up = upper_bound(mDados.begin(), mDados.end(), par,
+                                [](const auto &x, const auto &y) { return x.second < y.second; });
+    
+    //cout << up - mDados.begin() << endl;
 }
