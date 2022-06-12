@@ -13,13 +13,15 @@ int main(int argc, char *argv[]) {
 
     while (true) {
         cout << "--------------------------------------------------------------------" << endl;
+        cout << " ** Programa de autocompletar e autocorreção ** " << endl;
         cout << ">>> Digite uma palavra, ou parte dela e digite Enter, o pressione Ctrl + d pra terminar: ";
         getline(cin, sentenca);
         for_each(sentenca.begin(), sentenca.end(), [](char & c) {c = ::tolower(c);});
 
         cout << ">>> " << sentenca <<  endl;
-        if (sentenca == " ") {
-            break;
+        if (sentenca == " " || sentenca == "") {
+            cout << "Entrada inválida, digite novamente." << endl;
+            continue;
         }
 
         cout << "Autocomplete                  | Autocorrect" << endl;
