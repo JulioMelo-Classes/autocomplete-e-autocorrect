@@ -13,6 +13,8 @@ class AutoComplete {
         std::vector<std::string> palavrasAutoComplete;
 
     public:
+        AutoComplete();
+
         void setPalavras(std::string entrada, std::vector<std::pair<long int, std::string>> mDados);
 
         std::vector<std::string> getPalavras();

@@ -1,23 +1,25 @@
 #include "AutoComplete.hpp"
 #include "Dados.hpp"
+#include "Interface.hpp"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
     Dados dados(argv[1]);
     AutoComplete autoComplete;
-    vector<string> palavrasComplete;
-    vector<string> palavrasCorrect;
-    int count1 = 0, count2 = 0;
+
+    int count, tamanho;
     string sentenca;
 
     dados.ordenarAlfabeticamente();
     dados.escreveVetorOrdenado();
 
-    while (true){
+    while (true) {
         cout << "------------------------------- AUTOCOMPLETE & AUTOCORRECT -------------------------------" << endl;
         cout << ">>> Digite uma palavra, ou parte dela e digite Enter, o pressione Ctrl + d pra terminar: ";
-        count1 = count2 = 0;
+
+        count = 0;
+
         while (true) {
             getline(cin, sentenca);
             for_each(sentenca.begin(), sentenca.end(), [](char & c) {c = ::tolower(c);});
@@ -31,17 +33,28 @@ int main(int argc, char *argv[]) {
 
             autoComplete.setPalavras(sentenca, dados.getDados());
 
+            Interface interface(autoComplete.getPalavras(), autoComplete.getPalavras());
+
             cout << "Autocomplete                  | Autocorrect" << endl;
 
-            for (auto i : autoComplete.getPalavras()){
-                count1++;
-                cout << i << endl;
-                if (count1 == 5){
+            for (int i = 0; i < interface.getPar().first.size(); i++){
+                count++;
+                cout << interface.getPar().first[i];
+                tamanho = 30 - interface.getPar().first[i].size();
+                for (int j = 0; j < tamanho; j++){
+                    cout << ' ';
+                }
+                cout << "| ";
+                cout << interface.getPar().second[i];
+                cout << endl;
+                if (count == 5){
                     break;
                 }
-            }
+            }    
+            cout << endl;
 
             autoComplete.limparPalavras();
+            interface.limparPar();
             break;
         }
     }

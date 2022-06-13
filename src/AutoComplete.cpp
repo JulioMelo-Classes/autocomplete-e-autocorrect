@@ -1,6 +1,8 @@
 #include "AutoComplete.hpp"
 using namespace std;
 
+AutoComplete::AutoComplete(){}
+
 void AutoComplete::setPalavras(string entrada, vector<pair<long int, string>> mDados) {
     int count = 0;
     for (auto i : mDados) {

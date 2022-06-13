@@ -60,7 +60,7 @@ void Dados::ordenarAlfabeticamente() {
 
 void Dados::escreveVetorOrdenado(){
     fstream arquivo;
-    arquivo.open("../data/a.txt", ios::app);
+    arquivo.open("../data/palavrasOrdAlf.txt", ios::app);
     for (auto i : mDados){
         arquivo << i.first << " " << i.second << '\n';
     }
