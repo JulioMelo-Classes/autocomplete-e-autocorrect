@@ -13,7 +13,11 @@ class AutoComplete {
         std::vector<std::string> palavrasAutoComplete;
 
     public:
-        std::vector<std::string> testeAutoComplete(std::string entrada, std::vector<std::pair<long int, std::string>> mDados);
+        void setPalavras(std::string entrada, std::vector<std::pair<long int, std::string>> mDados);
+
+        std::vector<std::string> getPalavras();
+
+        void limparPalavras();
 };
 
 #endif

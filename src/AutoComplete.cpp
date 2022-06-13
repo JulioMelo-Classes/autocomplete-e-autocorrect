@@ -1,7 +1,7 @@
 #include "AutoComplete.hpp"
 using namespace std;
 
-vector<string> AutoComplete::testeAutoComplete(string entrada, vector<pair<long int, string>> mDados) {
+void AutoComplete::setPalavras(string entrada, vector<pair<long int, string>> mDados) {
     int count = 0;
     for (auto i : mDados) {
         for (int j = 0; j < (int)i.second.size(); j++) {
@@ -13,16 +13,14 @@ vector<string> AutoComplete::testeAutoComplete(string entrada, vector<pair<long 
                 }
             }
         }
-        if (palavrasAutoComplete.size() == 5) {
-            break;
-        }
         count = 0;
     }
-    for (auto xx : palavrasAutoComplete) {
-        cout << xx << " | ";
-    }
-    cout << endl;
-    palavrasAutoComplete.clear();
-    // TESTE COM CLEAR PARA TESTAR NOVAS ENTRADAS
+}
+
+std::vector<std::string> AutoComplete::getPalavras(){
     return palavrasAutoComplete;
+}
+
+void AutoComplete::limparPalavras(){
+    palavrasAutoComplete.clear();
 }
