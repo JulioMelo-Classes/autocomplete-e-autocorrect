@@ -1,42 +1,50 @@
 #include "AutoComplete.hpp"
 #include "Dados.hpp"
 
-
 using namespace std;
 
 int main(int argc, char *argv[]) {
     Dados dados(argv[1]);
     AutoComplete autoComplete;
+    vector<string> palavrasComplete;
+    vector<string> palavrasCorrect;
+    int count1 = 0, count2 = 0;
     string sentenca;
-    vector<string> a;
+
     dados.ordenarAlfabeticamente();
-    //dados.escreveVetorOrdenado();
+    dados.escreveVetorOrdenado();
 
-    while (true) {
-        cout << "--------------------------------------------------------------------" << endl;
-        cout << " ** Programa de autocompletar e autocorreção ** " << endl;
+    while (true){
+        cout << "------------------------------- AUTOCOMPLETE & AUTOCORRECT -------------------------------" << endl;
         cout << ">>> Digite uma palavra, ou parte dela e digite Enter, o pressione Ctrl + d pra terminar: ";
-        getline(cin, sentenca);
-        for_each(sentenca.begin(), sentenca.end(), [](char & c) {c = ::tolower(c);});
+        count1 = count2 = 0;
+        while (true) {
+            getline(cin, sentenca);
+            for_each(sentenca.begin(), sentenca.end(), [](char & c) {c = ::tolower(c);});
 
-        cout << ">>> " << sentenca <<  endl;
+            if (sentenca == " " || sentenca == "") {
+                cout << ">>> Entrada inválida! Tente novamente." << endl;
+                break;
+            } else {
+                cout << ">>> " << sentenca <<  endl;
+            }
 
-        if (sentenca == " " || sentenca == "") {
-            cout << "Entrada inválida, digite novamente." << endl;
-            continue;
+            autoComplete.setPalavras(sentenca, dados.getDados());
+
+            cout << "Autocomplete                  | Autocorrect" << endl;
+
+            for (auto i : autoComplete.getPalavras()){
+                count1++;
+                cout << i << endl;
+                if (count1 == 5){
+                    break;
+                }
+            }
+
+            autoComplete.limparPalavras();
+            break;
         }
-
-        cout << "Autocomplete                  | Autocorrect" << endl;
-
-        // a = dados.testeAutoComplete(sentenca);
-        // dados.imprimirTeste();
-        autoComplete.testeAutoComplete(sentenca, dados.getDados());
-        
-
-        // cout << dados.recursive_binary_search(a, 0, a.size(), sentenca) << endl;
-        dados.findLowerBound(sentenca);
     }
 
-    cout << "\n FIM DO CÓDIGO \n";
     return 0;
 }

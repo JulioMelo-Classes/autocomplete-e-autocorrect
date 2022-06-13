@@ -54,8 +54,8 @@ vector<pair<long int, string>> Dados::getDados() {
 }
 
 void Dados::ordenarAlfabeticamente() {
-    auto lambdaAlpha = [](const auto &x, const auto &y) { return x.second < y.second; };
-    sort(mDados.begin(), mDados.end(), lambdaAlpha);
+    sort(mDados.begin(), mDados.end(), 
+                            [](const auto &x, const auto &y) { return x.second < y.second; });
 }
 
 void Dados::escreveVetorOrdenado(){
@@ -67,30 +67,7 @@ void Dados::escreveVetorOrdenado(){
     arquivo.close();
 }
 
-string Dados::recursive_binary_search(vector<string> vector, int begin, int end, string item) {
-    /* Índice representando o meio do sub-vetor begin->end */
-    int i = (begin + end) / 2;
-
-    if (begin > end) { /* Ponto de parada. Item não está no vetor */
-        return "Item não encontrado";
-    }
-
-    if (vector[i] == item) { /* Item encontrado */
-        return "Achou " + vector[i];
-    }
-
-    if (vector[i] < item) {
-        cout << "Direita" << endl; /* Item está no sub-vetor à direita */
-        cout << vector[i] << endl;
-        return recursive_binary_search(vector, i + 1, end, item);
-
-    } else {
-        cout << "Esquerda" << endl;
-        cout << vector[i] << endl;
-        /* vector[i] > item. Item está no sub-vetor à esquerda */
-        return recursive_binary_search(vector, begin, i - 1, item);
-    }
-}
+// ----------- TESTES ------------
 
 void Dados::imprimirTeste() {
     int i = 0;
@@ -124,8 +101,6 @@ void Dados::findLowerBound(string &entrada){
         }
         c_1 = 0;
     }
-
-
 
     //cout << par.first << " " << par.second << endl;
     auto low = lower_bound(mDados.begin(), mDados.end(), par,
