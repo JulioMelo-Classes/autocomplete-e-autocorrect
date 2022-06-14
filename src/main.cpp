@@ -9,8 +9,6 @@ int main(int argc, char *argv[]) {
     Dados dados(argv[1]);
     AutoComplete autoComplete;
     AutoCorrect autoCorrect;
-
-    int count, tamanho;
     string sentenca;
 
     dados.ordenarAlfabeticamente();
@@ -19,8 +17,6 @@ int main(int argc, char *argv[]) {
     while (true) {
         cout << "------------------------------- AUTOCOMPLETE & AUTOCORRECT -------------------------------" << endl;
         cout << ">>> Digite uma palavra, ou parte dela e digite Enter, o pressione Ctrl + d pra terminar: ";
-
-        count = 0;
 
         while (true) {
             getline(cin, sentenca);
@@ -38,25 +34,10 @@ int main(int argc, char *argv[]) {
 
             Interface interface(autoComplete.getPalavras(), autoCorrect.getPalavras());
 
-            cout << "Autocomplete                  | Autocorrect" << endl;
-
-            for (int i = 0; i < interface.getPar().first.size(); i++){
-                count++;
-                cout << interface.getPar().first[i];
-                tamanho = 30 - interface.getPar().first[i].size();
-                for (int j = 0; j < tamanho; j++){
-                    cout << ' ';
-                }
-                cout << "| ";
-                cout << interface.getPar().second[i];
-                cout << endl;
-                if (count == 5){
-                    break;
-                }
-            }    
-            cout << endl;
-
+            interface.imprimirSaida();
+            
             autoComplete.limparPalavras();
+            autoCorrect.limparPalavras();
             interface.limparPar();
             break;
         }

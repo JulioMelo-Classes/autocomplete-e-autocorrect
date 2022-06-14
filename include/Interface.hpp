@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 
 class Interface{
     private:
@@ -12,6 +13,8 @@ class Interface{
         Interface(std::vector<std::string> vetorComplete, std::vector<std::string> vetorCorrect);
 
         std::pair<std::vector<std::string>, std::vector<std::string>> getPar();
+
+        void imprimirSaida();
 
         void limparPar();
 };
