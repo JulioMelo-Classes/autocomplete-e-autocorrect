@@ -26,9 +26,6 @@ void Interface::imprimirSaida(){
     cout << endl;
 }
 
-pair<vector<string>, vector<string>> Interface::getPar(){
-    return mVetores;
-}
 
 void Interface::limparPar(){
     mVetores.first.clear();
