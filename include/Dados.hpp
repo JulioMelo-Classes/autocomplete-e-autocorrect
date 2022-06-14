@@ -37,11 +37,7 @@ class Dados {
 
         void escreveVetorOrdenado();
 
-        std::vector<std::string> testeAutoComplete(std::string entrada);
-
         void findLowerBound(std::string &entrada);
-
-        std::string recursive_binary_search(std::vector<std::string> vector, int begin, int end, std::string item);
 
         void imprimirTeste();
 };

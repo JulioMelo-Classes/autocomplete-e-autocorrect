@@ -1,4 +1,5 @@
 #include "AutoComplete.hpp"
+#include "AutoCorrect.hpp"
 #include "Dados.hpp"
 #include "Interface.hpp"
 
@@ -7,6 +8,7 @@ using namespace std;
 int main(int argc, char *argv[]) {
     Dados dados(argv[1]);
     AutoComplete autoComplete;
+    AutoCorrect autoCorrect;
 
     int count, tamanho;
     string sentenca;
@@ -32,8 +34,9 @@ int main(int argc, char *argv[]) {
             }
 
             autoComplete.setPalavras(sentenca, dados.getDados());
+            autoCorrect.setPalavras(sentenca, dados.getDados());
 
-            Interface interface(autoComplete.getPalavras(), autoComplete.getPalavras());
+            Interface interface(autoComplete.getPalavras(), autoCorrect.getPalavras());
 
             cout << "Autocomplete                  | Autocorrect" << endl;
 
