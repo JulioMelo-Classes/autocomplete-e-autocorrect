@@ -18,14 +18,14 @@
 ## Autocomplete
  * O **preenchimento automático**, também conhecido como sugestão automática ou sugestão de pesquisa, é um recurso que fornece previsões à medida que você digita em uma caixa de texto. É comumente associado a motores de busca, embora possa ser usado para outros fins também.
 
-<p style="text-align:center">
-    <img style="align: center" src="https://user-images.githubusercontent.com/71523376/173899291-a32850ad-0aa5-494b-b1e3-fd110b3b1ce0.png" width="500">
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/71523376/173905176-3a6013a6-ddc8-49a8-bb4b-d38fb5def467.png" width="500">
 </p>
 
 ## Autocorrect
  * A **autocorreção**, também conhecida como substituição de texto, é uma função de correção automática de dados comumente encontrada em processadores de texto e interfaces de edição de texto para smartphones e tablets.
-<p style="text-align:center">
-    <img style="align: center" src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2017/07/spellingmistake-1.jpg?resize=640%2C320&ssl=1" width="500">
+<p align="center">
+    <img src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2017/07/spellingmistake-1.jpg?resize=640%2C320&ssl=1" width="500">
 </p>
 </br>
 
@@ -77,7 +77,7 @@
 
 # 🧪 Validações e testes
 
-# 🤝 Colaboradores:
+# 🤝 Colaboradores
   * [Danrley Lima](https://github.com/Danrley-Lima)
   * [Lucas Morais](https://github.com/lucas-morais27)
   
