@@ -1,37 +1,10 @@
-<h1>TESTES DE DESENVOLVIMENTO</h1>
-
-## **Para rodar o código utilize os comandos em terminal na pasta raíz do projeto:**
-###  
-1. ```
-    mkdir build
-   ```
-2. ```
-    cd build
-   ```
-3. ```
-    cmake ..
-   ```
-4. ```
-    cmake --build .
-   ```
-5. ```
-    ./words_complete_correct ../data/wikitionary.txt
-   ```
-   ou
-
--  ```
-    ../assets/run.sh
-   ```
-
-
-
-</br>
-</br>
-# Autocomplete e Autocorrect
-
 ### Sumário
-- [Autocomplete e Autocorrect](#autocomplete-e-autocorrect)
-    - [Sumário](#sumário)
+- [💻 Autocomplete e Autocorrect](#-autocomplete-e-autocorrect)
+- [⚙️ Requisitos](#️-requisitos)
+- [🤝 Colaboradores:](#-colaboradores)
+- [💽 Base de dados](#-base-de-dados)
+- [🧪 Validações e testes](#-validações-e-testes)
+- [🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧](#)
 - [1-Introdução](#1-introdução)
 - [2-Autocomplete vs Autocorrect](#2-autocomplete-vs-autocorrect)
   - [2.1-Autocomplete](#21-autocomplete)
@@ -43,6 +16,77 @@
 - [5-Saída](#5-saída)
 - [6-Validação e testes](#6-validação-e-testes)
 - [Autorship](#autorship)
+  
+
+# 💻 Autocomplete e Autocorrect
+- ## Autocomplete
+    *  O **preenchimento automático**, também conhecido como sugestão automática ou sugestão de pesquisa, é um recurso que fornece previsões à medida que você digita em uma caixa de texto. É comumente associado a motores de busca, embora possa ser usado para outros fins também.
+    <p style="text-align:center">
+        <img style="align: center" src="https://user-images.githubusercontent.com/71523376/173899291-a32850ad-0aa5-494b-b1e3-fd110b3b1ce0.png" width="500">
+    </p>
+
+- ## Autocorrect
+    *  A **autocorreção**, também conhecida como substituição de texto, é uma função de correção automática de dados comumente encontrada em processadores de texto e interfaces de edição de texto para smartphones e tablets.
+    <p style="text-align:center">
+        <img style="align: center" src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2017/07/spellingmistake-1.jpg?resize=640%2C320&ssl=1" width="500">
+    </p>
+</br>
+
+# ⚙️ Requisitos
+
+- ### **Ambiente**
+  * Linux</br>
+      <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" width="140" height="50"/>
+
+- ### **Linguagem de programação**
+  * C++</br>
+    <img src="https://img.shields.io/badge/-C++%20-00599C?logo=c%2B%2B&style=for-the-badge" width="140" height="50"/>
+
+- ### **Requisítos de compilação**
+  * CMAKE</br>
+    <img src="https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white" width="140" height="50" alt="CMAKE"/>
+  * GCC</br>
+    <img src="https://img.shields.io/badge/-GCC %20-A42E2B?logo=gnu&style=for-the-badge" width="140" height="50" alt="GCC"/>
+
+- ## Como rodar: 
+   - ### Para rodar o programa utilize os comandos no terminal na pasta raíz do projeto:
+  &emsp; &emsp; 👇
+  1. ```
+      mkdir build
+     ```
+  2. ```
+      cd build
+     ```
+  3. ```
+      cmake ..
+     ```
+  4. ```
+      cmake --build .
+     ```
+  5. ```
+      ./words_complete_correct ../data/wikitionary.txt
+     ```
+     ou
+
+  -  ```
+      ../assets/run.sh
+     ```
+  &emsp; &emsp; 👆
+<br>
+
+# 🤝 Colaboradores:
+  * [Danrley Lima](https://github.com/Danrley-Lima)
+  * [Lucas Morais](https://github.com/lucas-morais27)
+
+</br>
+
+# 💽 Base de dados
+
+# 🧪 Validações e testes
+
+***
+# 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
+
 
 # 1-Introdução
 
