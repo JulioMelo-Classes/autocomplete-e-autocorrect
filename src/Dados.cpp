@@ -1,12 +1,16 @@
 #include "Dados.hpp"
 using namespace std;
 
-Dados::Dados(string dados) {
+Dados::Dados(string dados){
+    mArquivo = dados;
+}
+
+void Dados::verificarDados() {
     string linha;
     ifstream arquivo;
     int c_linha1 = 0, c_linha2 = 0;
 
-    arquivo.open(dados.c_str());
+    arquivo.open(mArquivo.c_str());
 
     while (!arquivo.eof()) {
         c_linha1++;
@@ -19,43 +23,93 @@ Dados::Dados(string dados) {
         
         //Verifica se a palavra tem um peso correspondente ou se o arquivo está vazio.
         try{
+
             getline(arquivo, linha, ' ');
             long int peso = stol(linha);
             getline(arquivo, linha, '\n');
             linha.erase(linha.size() - 1);
-            mDados.push_back(make_pair(peso, linha));
+
+            //Verifica se o peso é negativo.
+            if (peso > pow(100,5)){
+                cout << "Erro! Peso negativo relacionado a palavra \"" + linha +  "\"." << endl;
+                exit(-1);
+            }
+
+            //Verifica se a palavra está vazia.
+            if (linha.empty()){
+                cout << "Erro! Palavra vazia na linha " + to_string(c_linha1) + "." << endl;
+                exit(-1);
+            }
+
         }catch(...){
-            cout << "Erro! Peso inexistente na linha " + to_string(c_linha1) + " ou arquivo \"" + dados + "\" vazio." << endl;
+            cout << "Erro! Peso inexistente na linha " + to_string(c_linha1) + " ou arquivo \"" + mArquivo + "\" vazio." << endl;
             exit(-1);
         } 
     }
 
     arquivo.close();
-    
-    for (auto item : mDados){
-        c_linha2++;
-
-        //Verifica se o peso é negativo.
-        if (item.first > pow(100,5)){
-            cout << "Erro! Peso negativo relacionado a palavra \"" + item.second +  "\"." << endl;
-            exit(-1);
-        }
-
-        //Verifica se a palavra está vazia.
-        if (item.second.empty()){
-            cout << "Erro! Palavra vazia na linha " + to_string(c_linha2) + "." << endl;
-            exit(-1);
-        }
-    }
 }
 
-vector<pair<long int, string>> Dados::getDados() {
-    return mDados;
+void Dados::setDados(){
+    string linha;
+    ifstream arquivo;
+    
+    arquivo.open(mArquivo.c_str());
+
+    while (!arquivo.eof()) {
+        getline(arquivo, linha, ' ');
+        long int peso = stol(linha);
+        getline(arquivo, linha, '\n');
+        linha.erase(linha.size() - 1);
+        mDados.push_back(make_pair(peso, linha));
+    }
+
+    arquivo.close();
 }
 
 void Dados::ordenarAlfabeticamente() {
     sort(mDados.begin(), mDados.end(), 
                             [](const auto &x, const auto &y) { return x.second < y.second; });
+}
+
+vector<string> Dados::getPalavrasComplet(string entrada) {
+    vector<string> palavras;
+    int count = 0;
+    for (auto i : mDados) {
+        for (int j = 0; j < (int)entrada.size(); j++) {
+            if (entrada[j] == i.second[j]) {
+                count++;
+                if (count == entrada.size()) {
+                    palavras.push_back(i.second);
+                    break;
+                }
+            }
+        }
+        count = 0;
+    }
+
+    return palavras;
+}
+
+vector<string> Dados::getPalavrasCorrect(string entrada) {
+    int count = 0;
+    vector<string> palavras, palavras_;
+
+    sort(mDados.begin(), mDados.end(), [](const auto &x, const auto &y) { return x.first < y.first; });
+
+    for (auto i : mDados) {
+        if (i.second.size() == entrada.size()){
+            palavras.push_back(i.second);
+        }
+    }
+
+    for (auto j : palavras){
+        if (entrada[0] == j[0]){
+            palavras_.push_back(j);
+        }
+    }
+
+    return palavras_;
 }
 
 void Dados::escreveVetorOrdenado(){

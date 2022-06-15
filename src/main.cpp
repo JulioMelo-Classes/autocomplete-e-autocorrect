@@ -11,6 +11,8 @@ int main(int argc, char *argv[]) {
     AutoCorrect autoCorrect;
     string sentenca;
 
+    dados.verificarDados();
+    dados.setDados();
     dados.ordenarAlfabeticamente();
     dados.escreveVetorOrdenado();
 
@@ -29,10 +31,7 @@ int main(int argc, char *argv[]) {
                 cout << ">>> " << sentenca <<  endl;
             }
 
-            autoComplete.setPalavras(sentenca, dados.getDados());
-            autoCorrect.setPalavras(sentenca, dados.getDados());
-
-            Interface interface(autoComplete.getPalavras(), autoCorrect.getPalavras());
+            Interface interface(dados.getPalavrasComplet(sentenca), dados.getPalavrasCorrect(sentenca));
 
             interface.imprimirSaida();
             

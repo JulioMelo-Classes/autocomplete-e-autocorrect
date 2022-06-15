@@ -1,6 +1,7 @@
 #ifndef AutoCorrect_hpp
 #define AutoCorrect_hpp
 
+#include "Dados.hpp"
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -11,8 +12,6 @@ class AutoCorrect{
 
     public:
         AutoCorrect();
-
-        void setPalavras(std::string entrada, std::vector<std::pair<long int, std::string>> mDados);
 
         std::vector<std::string> getPalavras();
 

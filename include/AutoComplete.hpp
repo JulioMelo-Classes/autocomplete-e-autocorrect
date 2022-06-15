@@ -1,6 +1,7 @@
 #ifndef AutoComplete_hpp
 #define AutoComplete_hpp
 
+#include "Dados.hpp"
 #include <algorithm>
 #include <fstream>
 #include <iostream>
@@ -14,8 +15,6 @@ class AutoComplete {
 
     public:
         AutoComplete();
-
-        void setPalavras(std::string entrada, std::vector<std::pair<long int, std::string>> mDados);
 
         std::vector<std::string> getPalavras();
 
