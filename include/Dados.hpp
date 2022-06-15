@@ -14,7 +14,7 @@
 class Dados {
     private:
         std::string mArquivo; 
-        std::vector<std::pair<long int, std::string>> mDados;  // Vetor de pares contendo peso e palavras.
+        std::vector<std::pair<unsigned long int, std::string>> mDados;  // Vetor de pares contendo peso e palavras.
 
     public:
 
@@ -26,9 +26,9 @@ class Dados {
         
         void ordenarAlfabeticamente();
 
-        std::vector<std::string> getPalavrasComplet(std::string entrada);
+        std::vector<std::pair<unsigned long int, std::string>> getPalavrasComplet(std::string entrada);
 
-        std::vector<std::string> getPalavrasCorrect(std::string entrada);
+        std::vector<std::pair<unsigned long int, std::string>> getPalavrasCorrect(std::string entrada);
 
         void escreveVetorOrdenado();
 

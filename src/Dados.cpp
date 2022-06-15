@@ -23,9 +23,8 @@ void Dados::verificarDados() {
         
         //Verifica se a palavra tem um peso correspondente ou se o arquivo está vazio.
         try{
-
             getline(arquivo, linha, ' ');
-            long int peso = stol(linha);
+            unsigned long int peso = stol(linha);
             getline(arquivo, linha, '\n');
             linha.erase(linha.size() - 1);
 
@@ -58,7 +57,7 @@ void Dados::setDados(){
 
     while (!arquivo.eof()) {
         getline(arquivo, linha, ' ');
-        long int peso = stol(linha);
+        unsigned long int peso = stol(linha);
         getline(arquivo, linha, '\n');
         linha.erase(linha.size() - 1);
         mDados.push_back(make_pair(peso, linha));
@@ -72,15 +71,15 @@ void Dados::ordenarAlfabeticamente() {
                             [](const auto &x, const auto &y) { return x.second < y.second; });
 }
 
-vector<string> Dados::getPalavrasComplet(string entrada) {
-    vector<string> palavras;
+vector<pair<unsigned long int, string>> Dados::getPalavrasComplet(string entrada) {
+    vector<pair<unsigned long int, string>> palavras;
     int count = 0;
     for (auto i : mDados) {
         for (int j = 0; j < (int)entrada.size(); j++) {
             if (entrada[j] == i.second[j]) {
                 count++;
                 if (count == entrada.size()) {
-                    palavras.push_back(i.second);
+                    palavras.push_back(i);
                     break;
                 }
             }
@@ -91,25 +90,15 @@ vector<string> Dados::getPalavrasComplet(string entrada) {
     return palavras;
 }
 
-vector<string> Dados::getPalavrasCorrect(string entrada) {
-    int count = 0;
-    vector<string> palavras, palavras_;
-
-    sort(mDados.begin(), mDados.end(), [](const auto &x, const auto &y) { return x.first < y.first; });
-
+vector<pair<unsigned long int, string>> Dados::getPalavrasCorrect(string entrada) {
+    vector<pair<unsigned long int, string>> palavras;
     for (auto i : mDados) {
         if (i.second.size() == entrada.size()){
-            palavras.push_back(i.second);
+            palavras.push_back(i);
         }
     }
 
-    for (auto j : palavras){
-        if (entrada[0] == j[0]){
-            palavras_.push_back(j);
-        }
-    }
-
-    return palavras_;
+    return palavras;
 }
 
 void Dados::escreveVetorOrdenado(){
@@ -137,7 +126,7 @@ void Dados::imprimirTeste() {
 
 void Dados::findLowerBound(string &entrada){
     vector<string> palavras;
-    pair<long int, string> par;
+    pair<unsigned long int, string> par;
     int c_1 = 0;
     
     for (auto i : mDados) {

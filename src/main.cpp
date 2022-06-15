@@ -31,7 +31,20 @@ int main(int argc, char *argv[]) {
                 cout << ">>> " << sentenca <<  endl;
             }
 
-            Interface interface(dados.getPalavrasComplet(sentenca), dados.getPalavrasCorrect(sentenca));
+            vector<pair<unsigned long int, string>> palavras1, palavras2;
+            vector<string> acm, acr;
+
+            palavras1 = dados.getPalavrasComplet(sentenca);
+            autoComplete.autoComplete(sentenca, palavras1);
+            acm = autoComplete.getPalavras();
+
+            palavras2 = dados.getPalavrasCorrect(sentenca);
+            autoCorrect.autoCorrect(sentenca, palavras2);
+            acr = autoCorrect.getPalavras();
+            
+            //autoComplete.autoCompleteTeste(sentenca, palavras1);
+
+            Interface interface(acm, acr);
 
             interface.imprimirSaida();
             

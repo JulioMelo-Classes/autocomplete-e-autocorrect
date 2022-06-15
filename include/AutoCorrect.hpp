@@ -13,6 +13,8 @@ class AutoCorrect{
     public:
         AutoCorrect();
 
+        void autoCorrect(std::string entrada, std::vector<std::pair<unsigned long int, std::string>> palavras);
+
         std::vector<std::string> getPalavras();
 
         void limparPalavras();
