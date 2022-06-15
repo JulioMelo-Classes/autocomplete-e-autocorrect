@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
                 cout << ">>> " << sentenca <<  endl;
             }
 
-            vector<pair<unsigned long int, string>> palavras1, palavras2;
+            vector<pair<long int, string>> palavras1, palavras2;
             vector<string> acm, acr;
 
             palavras1 = dados.getPalavrasComplet(sentenca);

@@ -3,7 +3,7 @@ using namespace std;
 
 AutoComplete::AutoComplete(){}
 
-void AutoComplete::autoComplete(string entrada, vector<pair<unsigned long int, string>> palavras){
+void AutoComplete::autoComplete(string entrada, vector<pair<long int, string>> palavras){
     
     sort(palavras.begin(), palavras.end(), 
                             [](const auto &x, const auto &y) { return x.first > y.first; });
@@ -13,7 +13,7 @@ void AutoComplete::autoComplete(string entrada, vector<pair<unsigned long int, s
     }
 }
 
-void AutoComplete::autoCompleteTeste(string entrada, vector<pair<unsigned long int, string>> palavras){
+void AutoComplete::autoCompleteTeste(string entrada, vector<pair<long int, string>> palavras){
     vector<string> palavras_;
 
     sort(palavras.begin(), palavras.end(), 

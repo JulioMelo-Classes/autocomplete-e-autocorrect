@@ -16,9 +16,9 @@ class AutoComplete {
     public:
         AutoComplete();
 
-        void autoComplete(std::string entrada, std::vector<std::pair<unsigned long int, std::string>> palavras);
+        void autoComplete(std::string entrada, std::vector<std::pair<long int, std::string>> palavras);
 
-        void autoCompleteTeste(std::string entrada, std::vector<std::pair<unsigned long int, std::string>> palavras);
+        void autoCompleteTeste(std::string entrada, std::vector<std::pair<long int, std::string>> palavras);
 
         std::vector<std::string> getPalavras();
 
