@@ -34,7 +34,7 @@ void Dados::verificarDados() {
             linha.erase(linha.size() - 1);
             for (auto caractere : linha) {
                 if (!(caractere >= 'a' && caractere <= 'z') && !(caractere == ' ')) {
-                    dadosErro.mensagem = "caractere inválido ";
+                    dadosErro.mensagem = "Caractere inválido ";
                     dadosErro.caractere = caractere;
                     dadosErro.caractere.append(" ");
                     throw dadosErro;
@@ -54,7 +54,7 @@ void Dados::verificarDados() {
             }
 
         } catch (erro err) {
-            cout << "Erro! " << err.mensagem << err.caractere << "na linha " + to_string(c_linha1) << endl;
+            cout << "Erro! " << err.mensagem << err.caractere << "na linha " + to_string(c_linha1) << '.' << endl;
             exit(-1);
         }
     }
