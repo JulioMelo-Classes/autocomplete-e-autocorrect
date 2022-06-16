@@ -2,23 +2,35 @@
 using namespace std;
 
 Interface::Interface(vector<string> vetorComplete, vector<string> vetorCorrect){
-    mVetores.first = vetorComplete;
-    mVetores.second = vetorCorrect;
+    mVetorComplete = vetorComplete;
+    mVetorCorrect = vetorCorrect;
 }
 
 void Interface::imprimirSaida(){
     int count = 0, tamanho;
     cout << "Autocomplete                  | Autocorrect" << endl;
-    for (int i = 0; i < mVetores.first.size(); i++){
+
+    for (int i = 0; i < mVetorCorrect.size(); i++){
         count++;
-        cout << mVetores.first[i];
-        tamanho = 30 - mVetores.first[i].size();
+        try {
+            cout << mVetorComplete[i];
+            tamanho = 30 - mVetorComplete[i].size();
+        } catch (...) {
+            tamanho = 30;
+        }
+
         for (int j = 0; j < tamanho; j++){
             cout << ' ';
         }
         cout << "| ";
-        cout << mVetores.second[i];
+
+        try {
+            cout << mVetorCorrect[i];
+        } catch (...) {
+            cout << "";
+        }
         cout << endl;
+
         if (count == 5){
             break;
         }
@@ -26,8 +38,3 @@ void Interface::imprimirSaida(){
     cout << endl;
 }
 
-
-void Interface::limparPar(){
-    mVetores.first.clear();
-    mVetores.second.clear();
-}

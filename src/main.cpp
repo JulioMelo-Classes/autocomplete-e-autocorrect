@@ -31,26 +31,22 @@ int main(int argc, char *argv[]) {
                 cout << ">>> " << sentenca <<  endl;
             }
 
-            vector<pair<long int, string>> palavras1, palavras2;
+            vector<pair<long int, string>> palavrasAutoComplete, palavrasAutoCorrect;
             vector<string> acm, acr;
 
-            palavras1 = dados.getPalavrasComplet(sentenca);
-            autoComplete.autoComplete(sentenca, palavras1);
-            acm = autoComplete.getPalavras();
+            palavrasAutoComplete = dados.getPalavrasComplet(sentenca);
+            acm = autoComplete.autoComplete(sentenca, palavrasAutoComplete);
 
-            palavras2 = dados.getPalavrasCorrect(sentenca);
-            autoCorrect.autoCorrect(sentenca, palavras2);
-            acr = autoCorrect.getPalavras();
-            
-            //autoComplete.autoCompleteTeste(sentenca, palavras1);
+            palavrasAutoCorrect = dados.getPalavrasCorrect(sentenca);
+            acr = autoCorrect.autoCorrect(sentenca, palavrasAutoCorrect);
 
             Interface interface(acm, acr);
 
             interface.imprimirSaida();
-            
-            autoComplete.limparPalavras();
-            autoCorrect.limparPalavras();
-            interface.limparPar();
+
+            dados.limparVetor(acm);
+            dados.limparVetor(acr);
+
             break;
         }
     }

@@ -98,18 +98,16 @@ vector<pair<long int, string>> Dados::getPalavrasComplet(string entrada) {
         }
         count = 0;
     }
-
     return palavras;
 }
 
 vector<pair<long int, string>> Dados::getPalavrasCorrect(string entrada) {
     vector<pair<long int, string>> palavras;
     for (auto i : mDados) {
-        if (i.second.size() == entrada.size()) {
+        if (((i.second.size() == (entrada.size() + 1)) && (i.second.size() > 2)) || ((i.second.size() == (entrada.size())) && (i.second.size() > 2))) {
             palavras.push_back(i);
         }
     }
-
     return palavras;
 }
 
@@ -122,49 +120,6 @@ void Dados::escreveVetorOrdenado() {
     arquivo.close();
 }
 
-// ----------- TESTES ------------
-
-void Dados::imprimirTeste() {
-    int i = 0;
-    while (i < 5) {
-        cout << "Numero: " << mDados[i].first << endl;
-
-        cout << "Palavra: "
-             << ">> " << mDados[i].second << " <<"
-             << " tamanho palavra: " << mDados[i].second.size() << endl;
-        i++;
-    }
-}
-
-void Dados::findLowerBound(string &entrada) {
-    vector<string> palavras;
-    pair<long int, string> par;
-    int c_1 = 0;
-
-    for (auto i : mDados) {
-        palavras.push_back(i.second);
-        // cout << i.first << " " << i.second << endl;
-        for (int j = 0; j < (int)entrada.size(); j++) {
-            if (entrada[j] == i.second[j]) {
-                c_1++;
-                if (c_1 == entrada.size()) {
-                    par.first = i.first;
-                    par.second = i.second;
-                    break;
-                }
-            }
-        }
-        c_1 = 0;
-    }
-
-    // cout << par.first << " " << par.second << endl;
-    auto low = lower_bound(mDados.begin(), mDados.end(), par,
-                           [](const auto &x, const auto &y) { return x.second < y.second; });
-
-    // cout << low - mDados.begin() << endl;
-
-    auto up = upper_bound(mDados.begin(), mDados.end(), par,
-                          [](const auto &x, const auto &y) { return x.second < y.second; });
-
-    // cout << up - mDados.begin() << endl;
+void Dados::limparVetor(vector<string> vetor){
+    vetor.clear();
 }

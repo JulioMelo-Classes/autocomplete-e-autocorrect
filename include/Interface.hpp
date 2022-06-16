@@ -4,19 +4,17 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 class Interface{
     private:
-        std::pair<std::vector<std::string>, std::vector<std::string>> mVetores;
+        std::vector<std::string> mVetorComplete;
+        std::vector<std::string> mVetorCorrect;
 
     public:
         Interface(std::vector<std::string> vetorComplete, std::vector<std::string> vetorCorrect);
 
-        std::pair<std::vector<std::string>, std::vector<std::string>> getPar();
-
         void imprimirSaida();
-
-        void limparPar();
 };
 
 #endif

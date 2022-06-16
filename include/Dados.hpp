@@ -32,9 +32,7 @@ class Dados {
 
         void escreveVetorOrdenado();
 
-        void findLowerBound(std::string &entrada);
-
-        void imprimirTeste();
+        void limparVetor(std::vector<std::string> vetor);
 };
 
 #endif

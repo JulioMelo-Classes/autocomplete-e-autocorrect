@@ -8,16 +8,14 @@
 
 class AutoCorrect{
     private:
-        std::vector<std::string> palavrasAutoCorrect;
 
     public:
         AutoCorrect();
 
-        void autoCorrect(std::string entrada, std::vector<std::pair<long int, std::string>> palavras);
+        std::vector<std::string> autoCorrect(std::string entrada, std::vector<std::pair<long int, std::string>> palavras);
 
-        std::vector<std::string> getPalavras();
+        int distEdicao(std::string entrada, int tamEntrada, std::string palavra, int tamPalavra);
 
-        void limparPalavras();
 };
 
 #endif
