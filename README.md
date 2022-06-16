@@ -12,6 +12,7 @@
     - [Verificação de caracteres especiais](#verificação-de-caracteres-especiais)
     - [Verificação de peso negativo](#verificação-de-peso-negativo)
     - [Verificação de palavra vazia](#verificação-de-palavra-vazia)
+    - [Verificação de peso vazio](#verificação-de-peso-vazio)
     - [Verificação caso o arquivo não exista](#verificação-caso-o-arquivo-não-exista)
 - [🤝 Colaboradores](#-colaboradores)
 - [🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧](#)
@@ -113,6 +114,14 @@ Testes para verificar se a base de dados está em conformidade para ser utilizad
     ./words_complete_correct ../data/testes/teste_vazio.txt
     ```
   - Saída esperada **`Erro! Palavra vazia na linha 4.`**
+
+</br>
+
+### Verificação de peso vazio
+  - ```
+    ./words_complete_correct ../data/testes/teste_peso_vazio.txt
+    ```
+  - Saída esperada **`Erro! Peso vazio na linha 3.`**
 
 </br>
 

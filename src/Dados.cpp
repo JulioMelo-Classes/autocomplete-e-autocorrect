@@ -18,12 +18,18 @@ void Dados::verificarDados() {
     }
 
     pair<string, string> dadosErro;
+    long int peso;
     while (!arquivo.eof()) {
         c_linha1++;
 
         try {
             getline(arquivo, linha, ' ');
-            long int peso = stol(linha);
+            try {
+                peso = stol(linha);
+            } catch (invalid_argument err) {
+                cout << "Erro! " << "Peso vazio na linha " << to_string(c_linha1) << '.' << endl;
+                exit(-1);
+            }
             getline(arquivo, linha, '\n');
             linha.erase(linha.size() - 1);
             for (auto caractere : linha) {
@@ -34,6 +40,7 @@ void Dados::verificarDados() {
                     throw dadosErro;
                 }
             }
+
             // Verifica se o peso é negativo.
             if (peso <= 0) {
                 dadosErro.first = "Peso negativo ";
@@ -47,8 +54,8 @@ void Dados::verificarDados() {
                 throw dadosErro;
             }
 
-        } catch (pair<string, string> err) {
-            cout << "Erro! " << err.first << err.second << "na linha " + to_string(c_linha1) << '.' << endl;
+        } catch (...) {
+            cout << "Erro! " << dadosErro.first << dadosErro.second << "na linha " + to_string(c_linha1) << '.' << endl;
             exit(-1);
         }
     }
@@ -114,6 +121,6 @@ void Dados::escreveVetorOrdenado() {
     arquivo.close();
 }
 
-void Dados::limparVetor(vector<string> vetor){
+void Dados::limparVetor(vector<string> vetor) {
     vetor.clear();
 }
