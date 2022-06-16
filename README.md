@@ -9,6 +9,10 @@
   - [Como rodar](#como-rodar)
 - [💽 Base de dados](#-base-de-dados)
 - [🧪 Validações e testes](#-validações-e-testes)
+    - [Verificação de caracteres especiais](#verificação-de-caracteres-especiais)
+    - [Verificação de peso negativo](#verificação-de-peso-negativo)
+    - [Verificação de palavra vazia](#verificação-de-palavra-vazia)
+    - [Verificação caso o arquivo não exista](#verificação-caso-o-arquivo-não-exista)
 - [🤝 Colaboradores](#-colaboradores)
 - [🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧](#)
 ***
@@ -86,37 +90,37 @@ Também houve algumas poucas remoções de linhas diretamente no arquivo.
 
 # 🧪 Validações e testes
 Testes para verificar se a base de dados está em conformidade para ser utilizada pelo programa.</br>
-   <h3><i>Utilize os comandos abaixo no terminal.</i></h3>
+<i>Utilize os comandos abaixo no terminal.</i>
 
-- ## Veficação de caracteres especiais.
-    - ```
-      ./words_complete_correct ../data/testes/teste_caractere.txt
-      ```
-    - Saída esperada **`Erro! Caractere inválido & na linha 2.`**
-
-</br>
-
-- ## Veficação de peso negativo.
-    - ```
-      ./words_complete_correct ../data/testes/teste_negativo.txt
-      ```
-    - Saída esperada **`Erro! Peso negativo na linha 3.`**
+### Verificação de caracteres especiais
+  - ```
+    ./words_complete_correct ../data/testes/teste_caractere.txt
+    ```
+  - Saída esperada **`Erro! Caractere inválido & na linha 2.`**
 
 </br>
 
-- ## Veficação de palavra vazia.
-    - ```
-      ./words_complete_correct ../data/testes/teste_vazio.txt
-      ```
-    - Saída esperada **`Erro! Palavra vazia na linha 4.`**
+### Verificação de peso negativo
+  - ```
+    ./words_complete_correct ../data/testes/teste_negativo.txt
+    ```
+  - Saída esperada **`Erro! Peso negativo na linha 3.`**
 
 </br>
 
-- ## Veficação caso o arquivo não exista ou o programa não consiga abri-lo.
-    - ```
-      ./words_complete_correct ../data/testes/teste_inexistente.txt
-      ```
-    - Saída esperada **`Erro! Arquivo inexistente.`**
+### Verificação de palavra vazia
+  - ```
+    ./words_complete_correct ../data/testes/teste_vazio.txt
+    ```
+  - Saída esperada **`Erro! Palavra vazia na linha 4.`**
+
+</br>
+
+### Verificação caso o arquivo não exista
+  - ```
+    ./words_complete_correct ../data/testes/teste_inexistente.txt
+    ```
+  - Saída esperada **`Erro! Arquivo inexistente.`**
 
 </br>
 
