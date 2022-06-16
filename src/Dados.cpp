@@ -17,13 +17,7 @@ void Dados::verificarDados() {
         exit(-1);
     }
 
-    class erro {
-       public:
-        string mensagem;
-        string caractere;
-    };
-    erro dadosErro;
-
+    pair<string, string> dadosErro;
     while (!arquivo.eof()) {
         c_linha1++;
 
@@ -34,27 +28,27 @@ void Dados::verificarDados() {
             linha.erase(linha.size() - 1);
             for (auto caractere : linha) {
                 if (!(caractere >= 'a' && caractere <= 'z') && !(caractere == ' ')) {
-                    dadosErro.mensagem = "Caractere inválido ";
-                    dadosErro.caractere = caractere;
-                    dadosErro.caractere.append(" ");
+                    dadosErro.first = "Caractere inválido ";
+                    dadosErro.second = caractere;
+                    dadosErro.second.append(" ");
                     throw dadosErro;
                 }
             }
             // Verifica se o peso é negativo.
             if (peso <= 0) {
-                dadosErro.mensagem = "Peso negativo ";
-                dadosErro.caractere = '\0';
+                dadosErro.first = "Peso negativo ";
+                dadosErro.second = '\0';
                 throw dadosErro;
             }
             // Verifica se a palavra está vazia.
             if (linha.empty()) {
-                dadosErro.mensagem = "Palavra vazia ";
-                dadosErro.caractere = '\0';
+                dadosErro.first = "Palavra vazia ";
+                dadosErro.second = '\0';
                 throw dadosErro;
             }
 
-        } catch (erro err) {
-            cout << "Erro! " << err.mensagem << err.caractere << "na linha " + to_string(c_linha1) << '.' << endl;
+        } catch (pair<string, string> err) {
+            cout << "Erro! " << err.first << err.second << "na linha " + to_string(c_linha1) << '.' << endl;
             exit(-1);
         }
     }
