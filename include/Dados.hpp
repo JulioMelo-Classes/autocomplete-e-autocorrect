@@ -26,13 +26,15 @@ class Dados {
         
         void ordenarAlfabeticamente();
 
-        std::vector<std::pair<long int, std::string>> getPalavrasComplet(std::string entrada);
+        std::vector<std::pair<long int, std::string>> getPalavrasComplete(std::string entrada);
 
         std::vector<std::pair<long int, std::string>> getPalavrasCorrect(std::string entrada);
 
         void escreveVetorOrdenado();
 
         void limparVetor(std::vector<std::string> vetor);
+
+        void limparVetor(std::vector<std::pair<long int, std::string>> vetor);
 };
 
 #endif

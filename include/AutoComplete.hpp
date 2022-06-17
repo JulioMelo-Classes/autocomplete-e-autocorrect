@@ -14,8 +14,6 @@ class AutoComplete {
         AutoComplete();
 
         std::vector<std::string> autoComplete(std::string entrada, std::vector<std::pair<long int, std::string>> palavras);
-
-        void autoCompleteTeste(std::string entrada, std::vector<std::pair<long int, std::string>> palavras);
 };
 
 #endif

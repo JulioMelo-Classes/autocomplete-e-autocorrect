@@ -7,34 +7,26 @@ Interface::Interface(vector<string> vetorComplete, vector<string> vetorCorrect){
 }
 
 void Interface::imprimirSaida(){
-    int count = 0, tamanho;
-    cout << "Autocomplete                  | Autocorrect" << endl;
-
-    for (int i = 0; i < mVetorCorrect.size(); i++){
-        count++;
-        try {
-            cout << mVetorComplete[i];
-            tamanho = 30 - mVetorComplete[i].size();
-        } catch (...) {
-            tamanho = 30;
+    vector<pair<string, string>> palavras;
+    cout << "Autocomplete                | Autocorrect" << endl;
+    
+    for (int i = 0; i < mVetorComplete.size(); i++){
+        if (mVetorComplete[i].empty()){
+            palavras.push_back(make_pair("                            ",mVetorCorrect[i]));
+        } else {
+            palavras.push_back(make_pair(mVetorComplete[i],mVetorCorrect[i]));
         }
+    }
 
-        for (int j = 0; j < tamanho; j++){
-            cout << ' ';
+    for (auto i : palavras){
+        if (i.first[0] != ' '){
+            cout << i.first;
+            cout << setw(30-i.first.size());
+            cout << "| " << i.second << endl;
+        } else {
+            cout << i.first;
+            cout << "| " << i.second << endl;
         }
-        cout << "| ";
-
-        try {
-            cout << mVetorCorrect[i];
-        } catch (...) {
-            cout << "";
-        }
-        cout << endl;
-
-        if (count == 5){
-            break;
-        }
-    }    
+    }
     cout << endl;
 }
-

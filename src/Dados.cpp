@@ -1,4 +1,5 @@
 #include "Dados.hpp"
+
 using namespace std;
 
 Dados::Dados(string dados) {
@@ -84,29 +85,33 @@ void Dados::ordenarAlfabeticamente() {
          [](const auto &x, const auto &y) { return x.second < y.second; });
 }
 
-vector<pair<long int, string>> Dados::getPalavrasComplet(string entrada) {
-    vector<pair<long int, string>> palavras;
-    int count = 0;
-    for (auto i : mDados) {
-        for (int j = 0; j < (int)entrada.size(); j++) {
-            if (entrada[j] == i.second[j]) {
-                count++;
-                if (count == entrada.size()) {
-                    palavras.push_back(i);
-                    break;
-                }
-            }
-        }
-        count = 0;
-    }
-    return palavras;
+vector<pair<long int, string>> Dados::getPalavrasComplete(string entrada) {
+    auto low = lower_bound(mDados.begin(), mDados.end(), entrada,
+                            [](const auto &x, string value) { return x.second <= value; });
+
+    auto up = upper_bound(mDados.begin(), mDados.end(), entrada, 
+                            [](string value, const auto &x) { return x.second.substr(0,value.size()) > value; });
+    
+    int X = low - mDados.begin();
+    int Y = up - mDados.begin();
+
+    auto inicio = mDados.begin() + X;
+    auto fim = mDados.begin() + Y;
+
+    vector<pair<long int, string>> resultado(Y - X + 1);
+
+    copy(inicio, fim, resultado.begin());
+
+    return resultado;
 }
 
 vector<pair<long int, string>> Dados::getPalavrasCorrect(string entrada) {
     vector<pair<long int, string>> palavras;
     for (auto i : mDados) {
-        if (((i.second.size() == (entrada.size() + 1)) && (i.second.size() > 2)) || ((i.second.size() == (entrada.size())) && (i.second.size() > 2))) {
-            palavras.push_back(i);
+        if (i.second.size() > 2){
+            if ((i.second.size() == (entrada.size() + 1)) || (i.second.size() == (entrada.size()))) {
+                palavras.push_back(i);
+            }
         }
     }
     return palavras;
@@ -122,5 +127,9 @@ void Dados::escreveVetorOrdenado() {
 }
 
 void Dados::limparVetor(vector<string> vetor) {
+    vetor.clear();
+}
+
+void Dados::limparVetor(vector<pair<long int, string>> vetor) {
     vetor.clear();
 }
