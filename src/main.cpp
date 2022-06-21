@@ -14,29 +14,29 @@ int main(int argc, char *argv[]) {
     dados.verificarDados();
     dados.setDados();
     dados.ordenarAlfabeticamente();
-    //dados.escreveVetorOrdenado();
 
     while (true) {
         cout << "------------------------------- AUTOCOMPLETE & AUTOCORRECT -------------------------------" << endl;
         cout << ">>> Digite uma palavra ou parte dela, pressione Enter ou pressione Ctrl + d pra terminar: ";
 
-        while (true) { 
+        while (true) {
             getline(cin, sentenca);
-            for_each(sentenca.begin(), sentenca.end(), [](char & c) {c = ::tolower(c);});
+            for_each(sentenca.begin(), sentenca.end(), [](char &c) { c = ::tolower(c); });
 
+            // Validação da entrada do usuário.
             if (sentenca == " " || sentenca == "") {
                 cout << ">>> Entrada inválida! Tente novamente." << endl;
                 cout << endl;
                 break;
             } else {
-                cout << ">>> " << sentenca <<  endl;
+                cout << ">>> " << sentenca << endl;
             }
 
             vector<pair<long int, string>> palavrasAutoComplete, palavrasAutoCorrect;
             vector<string> acm, acr;
 
             palavrasAutoComplete = dados.getPalavrasComplete(sentenca);
-            acm = autoComplete.autoComplete(sentenca, palavrasAutoComplete);
+            acm = autoComplete.autoComplete(palavrasAutoComplete);
 
             palavrasAutoCorrect = dados.getPalavrasCorrect(sentenca);
             acr = autoCorrect.autoCorrect(sentenca, palavrasAutoCorrect);
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
             Interface interface(acm, acr);
 
             interface.imprimirSaida();
-            
+
             dados.limparVetor(acm);
             dados.limparVetor(acr);
             dados.limparVetor(palavrasAutoComplete);

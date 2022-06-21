@@ -1,7 +1,6 @@
 #ifndef AutoComplete_hpp
 #define AutoComplete_hpp
 
-#include "Dados.hpp"
 #include <algorithm>
 #include <fstream>
 #include <iostream>
@@ -9,11 +8,22 @@
 #include <utility>
 #include <vector>
 
-class AutoComplete {
-    public:
-        AutoComplete();
+#include "Dados.hpp"
 
-        std::vector<std::string> autoComplete(std::string entrada, std::vector<std::pair<long int, std::string>> palavras);
+class AutoComplete {
+   public:
+    /**
+     * @brief Construtor vazio, utilizado apenas para gerar o objeto da classe.
+     */
+    AutoComplete();
+
+    /**
+     * @brief Função que ordena as palavras filtradas pelo upper_bound e lower_bound de acordo
+     * com as palavras que contém o maior peso até o menor peso.
+     * @param palavras Vetor de pesos e palavras filtradas pelo upper_bound e lower_bound.
+     * @return Vetor de pares contendo as palavras em ordenação decrescente pelo peso.
+     */
+    std::vector<std::string> autoComplete(std::vector<std::pair<long int, std::string>> palavras);
 };
 
 #endif

@@ -25,14 +25,17 @@ void Dados::verificarDados() {
 
         try {
             getline(arquivo, linha, ' ');
+            // Verifica se o peso é vazio.
             try {
                 peso = stol(linha);
             } catch (invalid_argument err) {
-                cout << "Erro! " << "Peso vazio na linha " << to_string(c_linha1) << '.' << endl;
+                cout << "Erro! "
+                     << "Peso vazio na linha " << to_string(c_linha1) << '.' << endl;
                 exit(-1);
             }
             getline(arquivo, linha, '\n');
             linha.erase(linha.size() - 1);
+            // Verifica se existe algum caractere especial que o programa não suporta.
             for (auto caractere : linha) {
                 if (!(caractere >= 'a' && caractere <= 'z') && !(caractere == ' ')) {
                     dadosErro.first = "Caractere inválido ";
@@ -87,11 +90,11 @@ void Dados::ordenarAlfabeticamente() {
 
 vector<pair<long int, string>> Dados::getPalavrasComplete(string entrada) {
     auto low = lower_bound(mDados.begin(), mDados.end(), entrada,
-                            [](const auto &x, string value) { return x.second <= value; });
+                           [](const auto &x, string value) { return x.second <= value; });
 
-    auto up = upper_bound(mDados.begin(), mDados.end(), entrada, 
-                            [](string value, const auto &x) { return x.second.substr(0,value.size()) > value; });
-    
+    auto up = upper_bound(mDados.begin(), mDados.end(), entrada,
+                          [](string value, const auto &x) { return x.second.substr(0, value.size()) > value; });
+
     int X = low - mDados.begin();
     int Y = up - mDados.begin();
 
@@ -108,22 +111,13 @@ vector<pair<long int, string>> Dados::getPalavrasComplete(string entrada) {
 vector<pair<long int, string>> Dados::getPalavrasCorrect(string entrada) {
     vector<pair<long int, string>> palavras;
     for (auto i : mDados) {
-        if (i.second.size() > 2){
+        if (i.second.size() > 2) {
             if ((i.second.size() == (entrada.size() + 1)) || (i.second.size() == (entrada.size()))) {
                 palavras.push_back(i);
             }
         }
     }
     return palavras;
-}
-
-void Dados::escreveVetorOrdenado() {
-    fstream arquivo;
-    arquivo.open("../data/palavrasOrdAlf.txt", ios::app);
-    for (auto i : mDados) {
-        arquivo << i.first << " " << i.second << '\n';
-    }
-    arquivo.close();
 }
 
 void Dados::limparVetor(vector<string> vetor) {
