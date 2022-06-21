@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
 
     while (true) {
         cout << "------------------------------- AUTOCOMPLETE & AUTOCORRECT -------------------------------" << endl;
-        cout << ">>> Digite uma palavra ou parte dela, pressione Enter ou pressione Ctrl + d pra terminar: ";
+        cout << ">>> Digite uma palavra ou parte dela, pressione Enter ou pressione Ctrl + c pra terminar: ";
 
         while (true) {
             getline(cin, sentenca);

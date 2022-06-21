@@ -19,8 +19,11 @@ vector<string> AutoCorrect::autoCorrect(string entrada, vector<pair<long int, st
     sort(palavrasDistancia.begin(), palavrasDistancia.end(),  // Ordena pela distância de edição (menor para o maior).
          [](const auto &x, const auto &y) { return x.second < y.second; });
 
-    for (auto i : palavrasDistancia) {
-        palavrasAutoCorrect.push_back(i.first);
+    for (int i = 0; i < 5; i++) {
+        if (i == palavrasDistancia.size() - 1) {
+            break;
+        }
+        palavrasAutoCorrect.push_back(palavrasDistancia[i].first);
     }
 
     return palavrasAutoCorrect;

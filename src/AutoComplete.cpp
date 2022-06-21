@@ -9,8 +9,11 @@ vector<string> AutoComplete::autoComplete(vector<pair<long int, string>> palavra
     sort(palavras.begin(), palavras.end(),  // Ordena pelo peso (maior para o menor).
          [](const auto &x, const auto &y) { return x.first > y.first; });
 
-    for (auto i : palavras) {
-        palavrasAutoComplete.push_back(i.second);
+    for (int i = 0; i < 5; i++) {
+        if (i == palavras.size() - 1) {
+            break;
+        }
+        palavrasAutoComplete.push_back(palavras[i].second);
     }
 
     return palavrasAutoComplete;

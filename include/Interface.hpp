@@ -20,7 +20,7 @@ class Interface {
     Interface(std::vector<std::string> vetorComplete, std::vector<std::string> vetorCorrect);
 
     /**
-     * @brief Imprime todas as palavras contidas nos 2 atributos dessa classe.
+     * @brief Imprime todas as palavras contidas nos 2 atributos dessa classe (ordenadas por maior relevância).
      * Caso não contenha mais palavras em algum dos vetores, será imprimido um espaço vazio
      * até que o outro vetor seja imprimido por completo.
      */
