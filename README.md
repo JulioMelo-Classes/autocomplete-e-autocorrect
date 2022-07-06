@@ -1,3 +1,37 @@
+# Avaliação
+
+## Geral
+
+G1. Implementção e Uso das Classes Especificadas | 10/10 pontos
+- Observações:
+
+G2. Implementação da Interface textual Especificada | 10/10 pontos
+- Observações:
+
+G3. Implementação da solução de auto complete | 10/10 pontos
+- Observações:
+
+G4. Implementação da solução de auto correct | 7/10 pontos
+- Observações: Faltou ordenar pela importancia depois de calcular a distancia de edição.
+
+G5. Método de validação das implementações | 5/10 pontos
+- Observações: Aqui vocês documentaram as validações dos arquivos de entrada mas não as validações das duas principais funcionalidades (autocorrect e autocomplete)
+
+G6. Penalidades por violação na especificação | -15/-25 pontos
+- Observações:Os métodos AutoCorrect::autoCorrect e AutoComplete::autoComplete recebe um vetor por cópia; Interface::Interface também recebe 2 vetores por cópia!
+
+## Código
+
+C1. Documentação do código e readme | 10/10 pontos
+- Observações:
+
+C2. Organização e indentação do código | 10/10 pontos
+- Observações:
+
+C3. Compilação automatizada (obrigatória) | ok
+- Observações:
+
+
 ### Sumário
 - [💻 Introdução](#-introdução)
   - [Autocomplete](#autocomplete)
