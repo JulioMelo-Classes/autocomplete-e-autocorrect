@@ -23,7 +23,7 @@ class AutoCorrect {
      * @param palavras
      * @return Vetor contendo as palavras ordenadas pela pontuação da Distância de Edição.
      */
-    std::vector<std::string> autoCorrect(std::string entrada, std::vector<std::pair<long int, std::string>> palavras);
+    std::vector<std::string> autoCorrect(std::string entrada, std::vector<std::pair<long int, std::string>> &palavras);
 
     /**
      * @brief Algoritmo de distância de edição utilizado dentro da função principal da classe.

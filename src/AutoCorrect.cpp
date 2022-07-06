@@ -4,7 +4,7 @@ using namespace std;
 
 AutoCorrect::AutoCorrect() {}
 
-vector<string> AutoCorrect::autoCorrect(string entrada, vector<pair<long int, string>> palavras) {
+vector<string> AutoCorrect::autoCorrect(string entrada, vector<pair<long int, string>> &palavras) {
     vector<pair<string, int>> palavrasDistancia;
     vector<string> palavrasAutoCorrect;
 

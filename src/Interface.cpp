@@ -1,7 +1,7 @@
 #include "Interface.hpp"
 using namespace std;
 
-Interface::Interface(vector<string> vetorComplete, vector<string> vetorCorrect) {
+Interface::Interface(vector<string> &vetorComplete, vector<string> &vetorCorrect) {
     mVetorComplete = vetorComplete;
     mVetorCorrect = vetorCorrect;
 }

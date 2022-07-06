@@ -23,7 +23,7 @@ class AutoComplete {
      * @param palavras Vetor de pesos e palavras filtradas pelo upper_bound e lower_bound.
      * @return Vetor de pares contendo as palavras em ordenação decrescente pelo peso.
      */
-    std::vector<std::string> autoComplete(std::vector<std::pair<long int, std::string>> palavras);
+    std::vector<std::string> autoComplete(std::vector<std::pair<long int, std::string>> &palavras);
 };
 
 #endif

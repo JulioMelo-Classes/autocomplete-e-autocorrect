@@ -17,7 +17,7 @@ class Interface {
      * @param vetorComplete Vetor com as palavras do autoComplete.
      * @param vetorCorrect Vetor com as palavras do autoCorrect.
      */
-    Interface(std::vector<std::string> vetorComplete, std::vector<std::string> vetorCorrect);
+    Interface(std::vector<std::string> &vetorComplete, std::vector<std::string> &vetorCorrect);
 
     /**
      * @brief Imprime todas as palavras contidas nos 2 atributos dessa classe (ordenadas por maior relevância).
